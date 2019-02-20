@@ -26,6 +26,10 @@ public class UserQuestion {
 	@Column(name = "token_id")
 	@JsonIgnore
 	private String tokenId;
+	
+	@Column(name = "user_generated_id")
+	@JsonIgnore
+	private String userGeneratedId;
 
 	@EmbeddedId
 	@JsonIgnore
@@ -72,5 +76,14 @@ public class UserQuestion {
 	public void setTokenId(String tokenId) {
 		this.tokenId = tokenId;
 	}
+
+	public String getUserGeneratedId() {
+		return userGeneratedId;
+	}
+
+	public void setUserGeneratedId(String userGeneratedId) {
+		this.userGeneratedId = userGeneratedId;
+	}
+	
 
 }

@@ -5,13 +5,13 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.microservices.guesswhoservice.controller.GuessWhoController;
+
 
 @SpringBootApplication
 public class GuessWhoServiceApplication {
 
-	@Autowired
-	private GuessWhoController guessController;
+	//@Autowired
+	//private GuessWhoController guessController;
 
 	public static void main(String[] args) {
 		SpringApplication.run(GuessWhoServiceApplication.class, args);

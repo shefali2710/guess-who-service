@@ -24,13 +24,18 @@ public class User {
 
 	@Column(name = "Token")
 	private String testTokenId;
+	
+	@Column(name = "User_generated_Id")
+	private int userGeneratedId;
 
 	@OneToMany(mappedBy = "primaryKey.user",cascade = CascadeType.ALL)
 	private Set<UserQuestion> userQuestion = new HashSet<UserQuestion>();
 
-	public User(String emailId, String testTokenId) {
+	public User(String emailId, String testTokenId, int userGeneratedId) {
 		this.emailId = emailId;
 		this.testTokenId = testTokenId;
+		this.userGeneratedId = userGeneratedId;
+		
 	}
 
 	public User() {
@@ -74,6 +79,14 @@ public class User {
 
 	public void setUserQuestion(Set<UserQuestion> userQuestion) {
 		this.userQuestion = userQuestion;
+	}
+
+	public int getUserGeneratedId() {
+		return userGeneratedId;
+	}
+
+	public void setUserGeneratedId(int userGeneratedId) {
+		this.userGeneratedId = userGeneratedId;
 	}
 
 	@Override
