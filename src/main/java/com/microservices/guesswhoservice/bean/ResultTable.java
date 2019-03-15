@@ -41,7 +41,7 @@ public class ResultTable {
 		this.tokenId = tokenId;
 	}
 
-	public boolean isAnswerStatus() {
+	public boolean getAnswerStatus() {
 		return answerStatus;
 	}
 

@@ -1,14 +1,9 @@
 package com.microservices.guesswhoservice.bean;
 
-import java.util.HashSet;
-import java.util.Set;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity(name = "User")
@@ -27,9 +22,6 @@ public class User {
 	
 	@Column(name = "User_generated_Id")
 	private int userGeneratedId;
-
-	@OneToMany(mappedBy = "primaryKey.user",cascade = CascadeType.ALL)
-	private Set<UserQuestion> userQuestion = new HashSet<UserQuestion>();
 
 	public User(String emailId, String testTokenId, int userGeneratedId) {
 		this.emailId = emailId;
@@ -63,22 +55,6 @@ public class User {
 
 	public void setTestTokenId(String testTokenId) {
 		this.testTokenId = testTokenId;
-	}
-	
-	public void addQuestions(UserQuestion question) {
-		this.userQuestion.add(question);
-	}
-	
-	public void addUserQuestiom(UserQuestion userQuestion) {
-        this.userQuestion.add(userQuestion);
-    } 
-
-	public Set<UserQuestion> getUserQuestion() {
-		return userQuestion;
-	}
-
-	public void setUserQuestion(Set<UserQuestion> userQuestion) {
-		this.userQuestion = userQuestion;
 	}
 
 	public int getUserGeneratedId() {

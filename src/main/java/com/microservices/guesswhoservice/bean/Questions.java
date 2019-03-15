@@ -1,18 +1,13 @@
 package com.microservices.guesswhoservice.bean;
 
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -20,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity(name = "Questions")
 @Table(name = "T_QUESTIONS")
-@NamedQuery(name="query_get_all_questions", query="SELECT q FROM Questions q")
+@NamedQuery(name = "query_get_all_questions", query = "SELECT q FROM Questions q")
 public class Questions {
 
 	@Id
@@ -47,14 +42,6 @@ public class Questions {
 	@Column(name = "ModifiedDate")
 	@JsonIgnore
 	private Date modifiedDate;
-
-//	@ManyToOne
-//	@JsonIgnore
-//	private Categories category;
-
-	@OneToMany(mappedBy = "primaryKey.questions", cascade = CascadeType.ALL)
-	@JsonIgnore
-	private Set<UserQuestion> userQuestion = new HashSet<UserQuestion>();
 
 	@Transient
 	private String shuffledWord;
@@ -127,14 +114,6 @@ public class Questions {
 	public void setModifiedDate(Date modifiedDate) {
 		this.modifiedDate = modifiedDate;
 	}
-/*
-	public Categories getCategory() {
-		return category;
-	}
-
-	public void setCategory(Categories category) {
-		this.category = category;
-	}*/
 
 	public String getShuffledWord() {
 		return shuffledWord;
@@ -144,22 +123,9 @@ public class Questions {
 		this.shuffledWord = shuffledWord;
 	}
 
-	public void addUserQuestion(UserQuestion userQuestion) {
-		this.userQuestion.add(userQuestion);
-	}
-
-	public Set<UserQuestion> getUserQuestion() {
-		return userQuestion;
-	}
-
-	public void setUserQuestion(Set<UserQuestion> userQuestion) {
-		this.userQuestion = userQuestion;
-	}
-
 	@Override
 	public String toString() {
 		return "Questions [title=" + title + ", imagePath=" + imagePath + ", answer=" + answer + ", isActive="
-				+ isActive + ", shuffledWord="
-				+ shuffledWord + "]";
+				+ isActive + ", shuffledWord=" + shuffledWord + "]";
 	}
 }

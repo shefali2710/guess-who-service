@@ -1,0 +1,128 @@
+2019-03-01 18:57:20.102  INFO 13844 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-03-01 18:57:20.512  INFO 13844 --- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$9c704964] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.2.RELEASE)
+
+2019-03-01 18:57:21.505  INFO 13844 --- [  restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2019-03-01 18:57:22.648  INFO 13844 --- [  restartedMain] c.c.c.ConfigServicePropertySourceLocator : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
+2019-03-01 18:57:22.649  WARN 13844 --- [  restartedMain] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/guess-who-service/default": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2019-03-01 18:57:22.653  INFO 13844 --- [  restartedMain] c.m.g.GuessWhoServiceApplication         : No active profile set, falling back to default profiles: default
+2019-03-01 18:57:24.121  INFO 13844 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-03-01 18:57:24.169  INFO 13844 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 35ms. Found 0 repository interfaces.
+2019-03-01 18:57:24.694  INFO 13844 --- [  restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=2e86e1fc-8787-32b3-80a7-66d21bd04e19
+2019-03-01 18:57:24.883  INFO 13844 --- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$80564667] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-01 18:57:24.933  INFO 13844 --- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$9c704964] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-01 18:57:26.310  INFO 13844 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8000 (http)
+2019-03-01 18:57:26.346  INFO 13844 --- [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-01 18:57:26.346  INFO 13844 --- [  restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.14]
+2019-03-01 18:57:26.368  INFO 13844 --- [  restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jre1.8.0_171\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files/Java/jre1.8.0_171/bin/server;C:/Program Files/Java/jre1.8.0_171/bin;C:/Program Files/Java/jre1.8.0_171/lib/amd64;C:\Program Files\Docker\Docker\Resources\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Java\jdk1.8.0_171\bin;C:\software\apache-maven-3.5.3\bin;C:\software\allure-2.6.0\bin;C:\Program Files\Perforce;C:\Program Files\Perforce\;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Users\Shefali\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk1.8.0_171\bin;C:\Program Files\Perforce\Server;C:\kube;;C:\Program Files\Docker Toolbox;C:\eclipse;;.]
+2019-03-01 18:57:26.601  INFO 13844 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-01 18:57:26.601  INFO 13844 --- [  restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3930 ms
+Loading class `com.mysql.jdbc.Driver'. This is deprecated. The new driver class is `com.mysql.cj.jdbc.Driver'. The driver is automatically registered via the SPI and manual loading of the driver class is generally unnecessary.
+2019-03-01 18:57:27.619  INFO 13844 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-03-01 18:57:27.624  WARN 13844 --- [  restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2019-03-01 18:57:27.835  INFO 13844 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-03-01 18:57:27.924  INFO 13844 --- [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-03-01 18:57:28.113  INFO 13844 --- [  restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2019-03-01 18:57:28.117  INFO 13844 --- [  restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-03-01 18:57:28.410  INFO 13844 --- [  restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-03-01 18:57:28.723  INFO 13844 --- [  restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-03-01 18:57:30.045  INFO 13844 --- [  restartedMain] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-03-01 18:57:30.404  INFO 13844 --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-03-01 18:57:30.434  INFO 13844 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-03-01 18:57:30.841  INFO 13844 --- [  restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-01 18:57:30.931  WARN 13844 --- [  restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-03-01 18:57:32.349  INFO 13844 --- [  restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-03-01 18:57:32.546  INFO 13844 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8000 (http) with context path ''
+2019-03-01 18:57:32.552  INFO 13844 --- [  restartedMain] c.m.g.GuessWhoServiceApplication         : Started GuessWhoServiceApplication in 14.184 seconds (JVM running for 15.402)
+2019-03-01 18:57:37.507  INFO 13844 --- [io-8000-exec-10] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-01 18:57:37.507  INFO 13844 --- [io-8000-exec-10] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-03-01 18:57:37.528  INFO 13844 --- [io-8000-exec-10] o.s.web.servlet.DispatcherServlet        : Completed initialization in 21 ms
+2019-03-01 18:57:43.193  INFO 13844 --- [io-8000-exec-10] c.m.g.controller.GuessWhoController      : responseFromAuthServicecom.microservices.guesswhoservice.bean.AuthorizeUserResponse@48cf335
+Hibernate: select next_val as id_val from hibernate_sequence for update
+Hibernate: update hibernate_sequence set next_val= ? where next_val=?
+2019-03-01 18:58:20.693  INFO 13844 --- [io-8000-exec-10] c.m.g.controller.GuessWhoController      : responseFromAuthServicecom.microservices.guesswhoservice.bean.AuthorizeUserResponse@71bfd6b6
+Hibernate: select next_val as id_val from hibernate_sequence for update
+Hibernate: update hibernate_sequence set next_val= ? where next_val=?
+2019-03-01 18:58:29.615  INFO 13844 --- [io-8000-exec-10] c.m.g.controller.GuessWhoController      : responseFromAuthServicecom.microservices.guesswhoservice.bean.AuthorizeUserResponse@73d365a3
+Hibernate: select next_val as id_val from hibernate_sequence for update
+Hibernate: update hibernate_sequence set next_val= ? where next_val=?
+2019-03-01 18:58:31.000  INFO 13844 --- [io-8000-exec-10] c.m.g.controller.GuessWhoController      : responseFromAuthServicecom.microservices.guesswhoservice.bean.AuthorizeUserResponse@7865ecb8
+Hibernate: select next_val as id_val from hibernate_sequence for update
+Hibernate: update hibernate_sequence set next_val= ? where next_val=?
+2019-03-01 18:58:31.987  INFO 13844 --- [io-8000-exec-10] c.m.g.controller.GuessWhoController      : responseFromAuthServicecom.microservices.guesswhoservice.bean.AuthorizeUserResponse@7292a609
+Hibernate: select next_val as id_val from hibernate_sequence for update
+Hibernate: update hibernate_sequence set next_val= ? where next_val=?
+2019-03-01 18:58:32.938  INFO 13844 --- [io-8000-exec-10] c.m.g.controller.GuessWhoController      : responseFromAuthServicecom.microservices.guesswhoservice.bean.AuthorizeUserResponse@65c44f55
+Hibernate: select next_val as id_val from hibernate_sequence for update
+Hibernate: update hibernate_sequence set next_val= ? where next_val=?
+2019-03-01 18:58:34.072  INFO 13844 --- [io-8000-exec-10] c.m.g.controller.GuessWhoController      : responseFromAuthServicecom.microservices.guesswhoservice.bean.AuthorizeUserResponse@719285a6
+Hibernate: select next_val as id_val from hibernate_sequence for update
+Hibernate: update hibernate_sequence set next_val= ? where next_val=?
+2019-03-01 18:58:35.061  INFO 13844 --- [io-8000-exec-10] c.m.g.controller.GuessWhoController      : responseFromAuthServicecom.microservices.guesswhoservice.bean.AuthorizeUserResponse@2b0b6498
+Hibernate: select next_val as id_val from hibernate_sequence for update
+Hibernate: update hibernate_sequence set next_val= ? where next_val=?
+2019-03-01 18:58:36.152  INFO 13844 --- [io-8000-exec-10] c.m.g.controller.GuessWhoController      : responseFromAuthServicecom.microservices.guesswhoservice.bean.AuthorizeUserResponse@2f1ca17e
+Hibernate: select next_val as id_val from hibernate_sequence for update
+Hibernate: update hibernate_sequence set next_val= ? where next_val=?
+2019-03-01 18:58:37.177  INFO 13844 --- [io-8000-exec-10] c.m.g.controller.GuessWhoController      : responseFromAuthServicecom.microservices.guesswhoservice.bean.AuthorizeUserResponse@ef7e733
+Hibernate: select next_val as id_val from hibernate_sequence for update
+Hibernate: update hibernate_sequence set next_val= ? where next_val=?
+Hibernate: insert into result (answer_status, question_id, token_id, user_id, id) values (?, ?, ?, ?, ?)
+Hibernate: insert into result (answer_status, question_id, token_id, user_id, id) values (?, ?, ?, ?, ?)
+Hibernate: insert into result (answer_status, question_id, token_id, user_id, id) values (?, ?, ?, ?, ?)
+Hibernate: insert into result (answer_status, question_id, token_id, user_id, id) values (?, ?, ?, ?, ?)
+Hibernate: insert into result (answer_status, question_id, token_id, user_id, id) values (?, ?, ?, ?, ?)
+Hibernate: insert into result (answer_status, question_id, token_id, user_id, id) values (?, ?, ?, ?, ?)
+Hibernate: insert into result (answer_status, question_id, token_id, user_id, id) values (?, ?, ?, ?, ?)
+Hibernate: insert into result (answer_status, question_id, token_id, user_id, id) values (?, ?, ?, ?, ?)
+Hibernate: insert into result (answer_status, question_id, token_id, user_id, id) values (?, ?, ?, ?, ?)
+Hibernate: insert into result (answer_status, question_id, token_id, user_id, id) values (?, ?, ?, ?, ?)
+2019-03-01 18:59:28.836  INFO 13844 --- [nio-8000-exec-9] c.m.g.controller.GuessWhoController      : responseFromAuthServicecom.microservices.guesswhoservice.bean.AuthorizeUserResponse@b7f2881
+Hibernate: select next_val as id_val from hibernate_sequence for update
+Hibernate: update hibernate_sequence set next_val= ? where next_val=?
+2019-03-01 18:59:29.879  INFO 13844 --- [nio-8000-exec-9] c.m.g.controller.GuessWhoController      : responseFromAuthServicecom.microservices.guesswhoservice.bean.AuthorizeUserResponse@7c2762eb
+Hibernate: select next_val as id_val from hibernate_sequence for update
+Hibernate: update hibernate_sequence set next_val= ? where next_val=?
+2019-03-01 18:59:31.093  INFO 13844 --- [nio-8000-exec-9] c.m.g.controller.GuessWhoController      : responseFromAuthServicecom.microservices.guesswhoservice.bean.AuthorizeUserResponse@7bbcc675
+Hibernate: select next_val as id_val from hibernate_sequence for update
+Hibernate: update hibernate_sequence set next_val= ? where next_val=?
+2019-03-01 18:59:31.833  INFO 13844 --- [nio-8000-exec-9] c.m.g.controller.GuessWhoController      : responseFromAuthServicecom.microservices.guesswhoservice.bean.AuthorizeUserResponse@76a1e4d7
+Hibernate: select next_val as id_val from hibernate_sequence for update
+Hibernate: update hibernate_sequence set next_val= ? where next_val=?
+2019-03-01 18:59:32.743  INFO 13844 --- [nio-8000-exec-9] c.m.g.controller.GuessWhoController      : responseFromAuthServicecom.microservices.guesswhoservice.bean.AuthorizeUserResponse@490d3baa
+Hibernate: select next_val as id_val from hibernate_sequence for update
+Hibernate: update hibernate_sequence set next_val= ? where next_val=?
+2019-03-01 18:59:33.624  INFO 13844 --- [nio-8000-exec-9] c.m.g.controller.GuessWhoController      : responseFromAuthServicecom.microservices.guesswhoservice.bean.AuthorizeUserResponse@11651cb4
+Hibernate: select next_val as id_val from hibernate_sequence for update
+Hibernate: update hibernate_sequence set next_val= ? where next_val=?
+2019-03-01 18:59:34.490  INFO 13844 --- [nio-8000-exec-9] c.m.g.controller.GuessWhoController      : responseFromAuthServicecom.microservices.guesswhoservice.bean.AuthorizeUserResponse@6255d25c
+Hibernate: select next_val as id_val from hibernate_sequence for update
+Hibernate: update hibernate_sequence set next_val= ? where next_val=?
+2019-03-01 18:59:35.175  INFO 13844 --- [nio-8000-exec-9] c.m.g.controller.GuessWhoController      : responseFromAuthServicecom.microservices.guesswhoservice.bean.AuthorizeUserResponse@18eb172d
+Hibernate: select next_val as id_val from hibernate_sequence for update
+Hibernate: update hibernate_sequence set next_val= ? where next_val=?
+2019-03-01 18:59:35.869  INFO 13844 --- [nio-8000-exec-9] c.m.g.controller.GuessWhoController      : responseFromAuthServicecom.microservices.guesswhoservice.bean.AuthorizeUserResponse@168e5ba2
+Hibernate: select next_val as id_val from hibernate_sequence for update
+Hibernate: update hibernate_sequence set next_val= ? where next_val=?
+2019-03-01 18:59:36.805  INFO 13844 --- [nio-8000-exec-9] c.m.g.controller.GuessWhoController      : responseFromAuthServicecom.microservices.guesswhoservice.bean.AuthorizeUserResponse@7aeada74
+Hibernate: select next_val as id_val from hibernate_sequence for update
+Hibernate: update hibernate_sequence set next_val= ? where next_val=?
+Hibernate: insert into result (answer_status, question_id, token_id, user_id, id) values (?, ?, ?, ?, ?)
+Hibernate: insert into result (answer_status, question_id, token_id, user_id, id) values (?, ?, ?, ?, ?)
+Hibernate: insert into result (answer_status, question_id, token_id, user_id, id) values (?, ?, ?, ?, ?)
+Hibernate: insert into result (answer_status, question_id, token_id, user_id, id) values (?, ?, ?, ?, ?)
+Hibernate: insert into result (answer_status, question_id, token_id, user_id, id) values (?, ?, ?, ?, ?)
+Hibernate: insert into result (answer_status, question_id, token_id, user_id, id) values (?, ?, ?, ?, ?)
+Hibernate: insert into result (answer_status, question_id, token_id, user_id, id) values (?, ?, ?, ?, ?)
+Hibernate: insert into result (answer_status, question_id, token_id, user_id, id) values (?, ?, ?, ?, ?)
+Hibernate: insert into result (answer_status, question_id, token_id, user_id, id) values (?, ?, ?, ?, ?)
+Hibernate: insert into result (answer_status, question_id, token_id, user_id, id) values (?, ?, ?, ?, ?)

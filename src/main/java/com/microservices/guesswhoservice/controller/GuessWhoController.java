@@ -3,7 +3,6 @@ package com.microservices.guesswhoservice.controller;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 import javax.transaction.Transactional;
@@ -25,6 +24,7 @@ import com.microservices.guesswhoservice.bean.AuthorizeUserRequest;
 import com.microservices.guesswhoservice.bean.AuthorizeUserResponse;
 import com.microservices.guesswhoservice.bean.GetQuestionsRequest;
 import com.microservices.guesswhoservice.bean.Questions;
+import com.microservices.guesswhoservice.bean.ResultResponse;
 import com.microservices.guesswhoservice.bean.ResultTable;
 import com.microservices.guesswhoservice.repository.UserRepository;
 
@@ -33,99 +33,58 @@ import com.microservices.guesswhoservice.repository.UserRepository;
 public class GuessWhoController {
 
 	public List<Questions> questions;
-	ArrayList<Questions> listOf10Questions = new ArrayList<Questions>();
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
-	/*
-	 * @GetMapping("/guess-who") public void retrieveQuestions() { //questions =
-	 * categoryRepo.retrieveQuestionsForCategory(); //questions =
-	 * userRepo.retrieveQuestions(); //startGame(); System.out.println("home page");
-	 * logger.info("home page"); }
-	 */
 
 	@Autowired
 	private UserRepository userRepo;
 
-	// @GetMapping("/guess-who/category/{category}")
 	public void retrieveQuestions() {
-		// questions = categoryRepo.retrieveQuestionsForCategory();
 		questions = userRepo.retrieveQuestions();
-		// startGame();
 	}
 
 	public List<Questions> startGame() {
 		shuffleAllTheContentsInTheList();
-		for (int i = 0; i <= 10; i++) {
+		ArrayList<Questions> listOf10Questions = new ArrayList<Questions>();
+		for (int i = 0; i < 5; i++) {
 			Questions original = selectRandomWord(i);
 			String shuffled = getShuffledWord(original.getAnswer());
 			original.setShuffledWord(shuffled);
 			listOf10Questions.add(original);
-			// System.out.println("Shuffled word is: " + shuffled);
-			/*
-			 * String userGuess = getUserGuess(); if
-			 * (original.getAnswer().equalsIgnoreCase(userGuess)) { correctAnswers++;
-			 * System.out.println("Congratulations! Your Answer is correct"); } else {
-			 * System.out.println("Sorry, Wrong answer"); }
-			 */
 		}
-
-		// System.out.println("Your correct Answers :" + correctAnswers);
-		System.out.println("Your question list:" + listOf10Questions);
-		// System.out.println("Please wait for another chance !!");
 		return listOf10Questions;
 	}
 
-	/*
-	 * public void addListOfQuestionsToJoinTable() {
-	 * userRepo.addEntriesToUserTable("shefaligupta1234567@gmail.com",
-	 * "mhj-665gvh"); int userId =
-	 * userRepo.retrieveUserIdFromEmail("shefaligupta1234567@gmail.com");
-	 * retrieveQuestions("bollywood"); List<Questions> list = startGame();
-	 * userRepo.addEntriesToJoinTable(list, userId); }
-	 */
-
-	// @PostMapping("/guess-who/GetQuestionsRequest")
-	// public void addListOfQuestionsToJoinTable(@RequestBody UserQuestionAnswer
-	// req) {
-	// userRepo.addEntriesToResultTable(req.getUserId(),req.getTokenId(),req.getQuestionId(),req.getAnswerStatus())
-	// ;
-	// }
-
 	@PostMapping("/guess-who/GetQuestionsRequest")
 	public List<Questions> returnListOfTenQuestions(@RequestBody GetQuestionsRequest req) {
-		AuthorizeUserResponse callDotNetService = callDotNetService(req.getEmailId(), req.getTestTokenId());
+		AuthorizeUserResponse callDotNetService = callDotNetService(req.getEmailID(), req.getToken());
 		userRepo.addEntriesToUserTable(callDotNetService.getUser().getEmailID(), callDotNetService.getUser().getToken(),
 				callDotNetService.getUser().getUserID());
 		retrieveQuestions();
 		List<Questions> list = startGame();
-		// userRepo.addEntriesToJoinTable(list, userId);
+		logger.info("{}", list);
 		return list;
 	}
-	
+
 	@PostMapping("/guess-who/GetResults")
-	public ResultTable updateAnswers(@RequestBody ResultTable req) {
-		return req;
+	public ResultResponse updateAnswers(@RequestBody List<ResultTable> req) {
+		ResultResponse response = null;
+		try {
+			for (ResultTable result : req) {
+				userRepo.addEntriesToJoinTable(result.getUserId(), result.getQuestionId(), result.getTokenId(),
+						result.getAnswerStatus());
+				response = new ResultResponse("Data inserted", true);
+			}
+		} catch (Exception e) {
+			response = new ResultResponse("Data not inserted", false);
+		}
+		return response;
 	}
-
-	/*
-	 * @PostMapping("/guess-who/GetUserDetailsFromDotNetService") public
-	 * UserRequestRestApi returnUserDetailsFromDotNetService(@RequestBody
-	 * UserRequestRestApi req) {
-	 * 
-	 * return new UserRequestRestApi(req.getUserId(), req.getEmailId(),
-	 * req.getModifiedDate(), req.getToken(), req.getUserName()); }
-	 */
-
-	/*
-	 * @PostMapping("/guess-who/GetUserDetailsFromDotNetService") public
-	 * ResponseEntity<UserRequestRestApi>
-	 * returnUserDetailsFromDotNetService(@RequestBody UserRequestRestApi2 req) {
-	 * 
-	 * return new ResponseEntity<UserRequestRestApi>(HttpStatus.CREATED); }
-	 */
 
 	public AuthorizeUserResponse callDotNetService(String emailId, String tokenId) {
 		AuthorizeUserRequest request = new AuthorizeUserRequest(emailId, tokenId);
-		String url = "http://private-1fb86-guesswho1.apiary-mock.com/auth";
+		//String url = "http://private-1fb86-guesswho1.apiary-mock.com/api/login/auth";
+		 String url = "http://guesswhodotnet/api/login/auth";
+		// String url = "http://192.168.2.81:30848/api/login/auth";
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		RestTemplate restTemplate = new RestTemplate();
@@ -136,12 +95,6 @@ public class GuessWhoController {
 				AuthorizeUserResponse.class);
 		AuthorizeUserResponse result = response.getBody();
 		return result;
-	}
-
-	public String getUserGuess() {
-		Scanner sn = new Scanner(System.in);
-		System.out.println("Please type in the original word: ");
-		return sn.nextLine();
 	}
 
 	public List<Questions> shuffleAllTheContentsInTheList() {

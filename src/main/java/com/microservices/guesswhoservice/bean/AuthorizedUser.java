@@ -9,14 +9,10 @@ public class AuthorizedUser {
 	private Date modifiedDate;
 	private String token;
 	private String userName;
-	
-	
-	public AuthorizedUser(String emailId,String token) {
-		
+
+	public AuthorizedUser(String emailId, String token) {
 		this.emailID = emailId;
-		
 		this.token = token;
-		
 	}
 
 	public AuthorizedUser() {
@@ -62,7 +58,5 @@ public class AuthorizedUser {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-	
-	
-	
+
 }

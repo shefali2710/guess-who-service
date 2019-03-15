@@ -3,25 +3,31 @@ package com.microservices.guesswhoservice.bean;
 public class GetQuestionsRequest {
 
 	public String userId;
-	public String emailId;
-	public String testTokenId;
-	
+	public String EmailID;
+	public String Token;
+
 	public String getUserId() {
 		return userId;
 	}
+
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
-	public String getEmailId() {
-		return emailId;
+
+	public String getEmailID() {
+		return EmailID;
 	}
-	public void setEmailId(String emailId) {
-		this.emailId = emailId;
+
+	public void setEmailID(String emailID) {
+		EmailID = emailID;
 	}
-	public String getTestTokenId() {
-		return testTokenId;
+
+	public String getToken() {
+		return Token;
 	}
-	public void setTestTokenId(String testTokenId) {
-		this.testTokenId = testTokenId;
+
+	public void setToken(String token) {
+		Token = token;
 	}
+
 }
